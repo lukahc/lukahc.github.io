@@ -4,7 +4,6 @@ class NavbarCustom extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log("nav");
         this.innerHTML = `
             <nav class="navbar">
                 <a href="/index.html">Home</a>
