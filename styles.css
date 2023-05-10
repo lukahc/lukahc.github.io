@@ -1,7 +1,7 @@
 :root {
     --text: #dedede;
     --bg: #232323;
-    --red: #dc0a2d;
+    --red: #9a0720;
 }
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -12,7 +12,6 @@ body {
 .navbar {
     display: flex;
     justify-content: start;
-    gap: 1rem;
     background-color: var(--red);
     align-items: center;
 }
@@ -25,5 +24,5 @@ body {
     font-weight: bold;
 }
 .header-text {
-    margin-left: 0.5rem;
+    margin: 0.5rem;
 }
