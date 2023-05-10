@@ -1,5 +1,10 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 .navbar {
     display: flex;
     justify-content: space-evenly;
     gap: 1rem;
+    background-color: firebrick;
+    color: white;
 }

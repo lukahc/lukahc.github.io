@@ -7,7 +7,7 @@ class NavbarCustom extends HTMLElement {
         console.log("nav");
         this.innerHTML = `
             <nav class="navbar">
-                <p>Home</p>
+                <a href="/index.html">Home</a>
                 <p>Page</p>
                 <p>Page</p>
                 <p>Page</p>
