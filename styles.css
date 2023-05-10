@@ -7,7 +7,11 @@ body {
     gap: 1rem;
     background-color: firebrick;
     color: white;
+    align-items: center;
 }
 .navbar > a {
     all: inherit;
+}
+.navbar > * {
+    margin: 1rem 0;
 }
