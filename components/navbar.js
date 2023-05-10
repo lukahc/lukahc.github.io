@@ -4,6 +4,7 @@ class Navbar extends HTMLElement {
     }
 
     connectedCallback() {
+        console.log("nav");
         this.innerHTML = `
             <nav class="navbar">
                 <p>Home</p>
