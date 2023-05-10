@@ -21,7 +21,6 @@ body {
 }
 .navbar > * {
     margin: 0.5rem;
-    font-weight: bold;
 }
 .header-text {
     margin: 0.5rem;
