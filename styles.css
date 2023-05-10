@@ -22,6 +22,9 @@ body {
 .navbar > * {
     margin: 0.5rem;
 }
+.navbar > :hover {
+    background-color: #84061b;
+}
 .header-text {
     margin: 0.5rem;
 }
