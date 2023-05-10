@@ -4,7 +4,7 @@ body {
 }
 .navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
     gap: 1rem;
     background-color: firebrick;
     color: white;
@@ -15,5 +15,8 @@ body {
     text-decoration: none;
 }
 .navbar > * {
-    margin: 0.5rem 0;
+    margin: 0.5rem;
+}
+.header-text {
+    margin-left: 0.5rem;
 }
