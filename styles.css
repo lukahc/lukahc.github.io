@@ -1,13 +1,14 @@
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    color: white;
+    background-color: darkslategrey;
 }
 .navbar {
     display: flex;
     justify-content: start;
     gap: 1rem;
     background-color: firebrick;
-    color: white;
     align-items: center;
 }
 .navbar > a {
