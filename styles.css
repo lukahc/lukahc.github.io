@@ -1,14 +1,19 @@
+:root {
+    --text: #dedede;
+    --bg: #232323;
+    --red: #dc0a2d;
+}
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    color: #dedede;
-    background-color: #232323;
+    color: var(--text);
+    background-color: var(--bg);
 }
 .navbar {
     display: flex;
     justify-content: start;
     gap: 1rem;
-    background-color: #dc0a2d;
+    background-color: var(--red);
     align-items: center;
 }
 .navbar > a {
