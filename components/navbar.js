@@ -1,4 +1,4 @@
-class Navbar extends HTMLElement {
+class NavbarCustom extends HTMLElement {
     constructor() {
         super();
     }
@@ -16,4 +16,4 @@ class Navbar extends HTMLElement {
     }
 }
 
-customElements.define("navbar-c", Navbar);
+customElements.define("navbar-c", NavbarCustom);
