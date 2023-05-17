@@ -8,6 +8,9 @@ body {
     margin: 0;
     color: $text;
     background-color: $bg;
+    > main {
+        margin-left: 1rem;
+    }
 }
 .navbar {
     display: flex;
@@ -25,7 +28,4 @@ body {
             background-color: $red-dark;
         }
     }
-}
-.header-text {
-    margin: 0.5rem;
 }
