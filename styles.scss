@@ -1,16 +1,34 @@
-@charset "UTF-8";
-$text: #dedede;
+$fg: #dedede;
 $bg: #232323;
+$bg-dark: #191919;
 $red: #9a0720;
 $red-dark: #84061b;
+
+//Sass will not compile with utf-8 charset unless there are non-ASCII characters
+.force-utf-8 {
+    content: "¡";
+}
 
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    color: $text;
+    color: $fg;
     background-color: $bg;
     > main {
         margin-left: 1rem;
+    }
+    input {
+        font: inherit;
+        background: $bg;
+        border: 1px solid $fg;
+        border-radius: 5px;
+        color: inherit;
+        &[type="submit"] {
+            cursor: pointer;
+            &:hover {
+                background: $bg-dark;
+            }
+        }
     }
 }
 .navbar {

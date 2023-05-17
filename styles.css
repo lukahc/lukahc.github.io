@@ -1,3 +1,8 @@
+@charset "UTF-8";
+.force-utf-8 {
+  content: "¡";
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -6,6 +11,19 @@ body {
 }
 body > main {
   margin-left: 1rem;
+}
+body input {
+  font: inherit;
+  background: #232323;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  color: inherit;
+}
+body input[type=submit] {
+  cursor: pointer;
+}
+body input[type=submit]:hover {
+  background: #191919;
 }
 
 .navbar {
