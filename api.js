@@ -9,7 +9,12 @@ async function getName(num) {
     try {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${num}`);
         const json = await res.json();
+
         nameE.innerHTML = toTitleCase(json.name);
+
+        const types = json.types.map(({ type: { name } }) => toTitleCase(name));
+        typesE.innerHTML = types.join(", ");
+
         errorE.className = "error hidden";
         resultE.className = "result";
     } catch {
