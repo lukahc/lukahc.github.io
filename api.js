@@ -15,6 +15,8 @@ async function getName(num) {
         const types = json.types.map(({ type: { name } }) => toTitleCase(name));
         typesE.innerHTML = types.join(", ");
 
+        spriteE.innerHTML = `<img src=${json.sprites.front_default} alt="Sprite" />`;
+
         errorE.className = "error hidden";
         resultE.className = "result";
     } catch {
