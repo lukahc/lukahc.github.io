@@ -5,7 +5,6 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
   color: #dedede;
   background-color: #232323;
 }
@@ -32,6 +31,10 @@ input[type=submit] {
 }
 input[type=submit]:hover {
   background: #191919;
+}
+
+.result {
+  display: grid;
 }
 
 .navbar {

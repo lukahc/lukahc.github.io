@@ -17,11 +17,11 @@ async function getName(num) {
 
         spriteE.innerHTML = `<img src=${json.sprites.front_default} alt="Sprite" />`;
 
-        errorE.className = "error hidden";
+        errorE.className = "hidden";
         resultE.className = "result";
     } catch {
         errorE.className = "error";
-        resultE.className = "result hidden";
+        resultE.className = "hidden";
     }
     submitE.value = "Submit";
 }
