@@ -14,40 +14,42 @@ body {
     margin: 0;
     color: $fg;
     background-color: $bg;
-    > main {
-        margin-left: 1rem;
-    }
-    input {
-        font: inherit;
-        background: $bg;
-        border: 1px solid $fg;
-        border-radius: 5px;
-        color: inherit;
-        &[type="submit"] {
-            cursor: pointer;
-            &:hover {
-                background: $bg-dark;
-            }
+}
+
+main {
+    margin-left: 1rem;
+}
+
+input {
+    font: inherit;
+    background: $bg;
+    border: 1px solid $fg;
+    border-radius: 5px;
+    color: inherit;
+    &[type="submit"] {
+        cursor: pointer;
+        &:hover {
+            background: $bg-dark;
         }
     }
 }
+
 .navbar {
     display: flex;
     justify-content: start;
     background-color: $red;
     align-items: center;
-    > * {
-        margin: 0;
-        padding: 0.5rem;
-    }
     > a {
         color: inherit;
         text-decoration: none;
+        margin: 0;
+        padding: 0.5rem;
         &:hover {
             background-color: $red-dark;
         }
     }
 }
+
 .hidden {
     display: none;
 }

@@ -9,20 +9,22 @@ body {
   color: #dedede;
   background-color: #232323;
 }
-body > main {
+
+main {
   margin-left: 1rem;
 }
-body input {
+
+input {
   font: inherit;
   background: #232323;
   border: 1px solid #dedede;
   border-radius: 5px;
   color: inherit;
 }
-body input[type=submit] {
+input[type=submit] {
   cursor: pointer;
 }
-body input[type=submit]:hover {
+input[type=submit]:hover {
   background: #191919;
 }
 
@@ -32,13 +34,11 @@ body input[type=submit]:hover {
   background-color: #9a0720;
   align-items: center;
 }
-.navbar > * {
-  margin: 0;
-  padding: 0.5rem;
-}
 .navbar > a {
   color: inherit;
   text-decoration: none;
+  margin: 0;
+  padding: 0.5rem;
 }
 .navbar > a:hover {
   background-color: #84061b;

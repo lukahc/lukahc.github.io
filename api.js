@@ -1,5 +1,8 @@
 async function getName(num) {
     const resultE = document.querySelector("#result");
+    const nameE = document.querySelector("#name");
+    const typesE = document.querySelector("#types");
+    const spriteE = document.querySelector("#sprite");
     const submitE = document.querySelector("#submit");
     submitE.value = "Loading...";
     try {

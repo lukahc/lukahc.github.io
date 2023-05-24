@@ -7,9 +7,9 @@ class NavbarCustom extends HTMLElement {
         this.innerHTML = `
             <nav class="navbar">
                 <a href="/index.html">Home</a>
-                <p>Page</p>
-                <p>Page</p>
-                <p>Page</p>
+                <a>Page</a>
+                <a>Page</a>
+                <a>Page</a>
             </nav>
         `;
     }
