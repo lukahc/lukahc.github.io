@@ -2,6 +2,7 @@ async function getName(num) {
     const resultE = document.querySelector("#result");
     const errorE = document.querySelector("#error");
     const nameE = document.querySelector("#name");
+    const idE = document.querySelector("#id");
     const typesE = document.querySelector("#types");
     const spriteE = document.querySelector("#sprite");
     const submitE = document.querySelector("#submit");
@@ -11,9 +12,15 @@ async function getName(num) {
         const json = await res.json();
 
         nameE.innerHTML = toTitleCase(json.name);
+        idE.innerHTML = "#" + json.id.toString().padStart(4, "0");
 
-        const types = json.types.map(({ type: { name } }) => toTitleCase(name));
-        typesE.innerHTML = types.join(", ");
+        const types = json.types.map(({ type: { name } }) => name);
+        typesE.innerHTML = types
+            .map(
+                (type) =>
+                    `<span class="type ${type}">${toTitleCase(type)}</span>`
+            )
+            .join("");
 
         spriteE.innerHTML = `<img src=${json.sprites.front_default} alt="Sprite" />`;
 

@@ -1,8 +1,28 @@
 $fg: #dedede;
+$fg-dark: #9b9b9b;
 $bg: #232323;
 $bg-dark: #191919;
 $red: #9a0720;
 $red-dark: #84061b;
+
+$normal: #919aa3;
+$fighting: #cf3e69;
+$flying: #90aade;
+$poison: #ad6ac9;
+$ground: #da7844;
+$rock: #c8b88c;
+$bug: #91c228;
+$ghost: #566eb1;
+$steel: #5a8fa3;
+$fire: #ff9d53;
+$water: #4c91d6;
+$grass: #63bc5b;
+$electric: #f3d338;
+$psychic: #f97277;
+$ice: #7ed2c5;
+$dragon: #026dc5;
+$dark: #5a5366;
+$fairy: #ec8fe6;
 
 //Sass will not compile with utf-8 charset unless there are non-ASCII characters
 .force-utf-8 {
@@ -16,7 +36,7 @@ body {
 }
 
 main {
-    margin-left: 1rem;
+    margin: 0 1rem;
 }
 
 h1 {
@@ -40,7 +60,22 @@ input {
 }
 
 .result {
-    display: grid;
+    width: 10rem;
+    border: 0.4rem solid $fg;
+    border-radius: 1rem;
+    margin: 1rem;
+    > div {
+        text-align: center;
+    }
+    .id {
+        color: $fg-dark;
+    }
+    .type {
+        margin: 0.2rem;
+        padding: 0.2rem;
+        display: inline-block;
+        border-radius: 1rem;
+    }
 }
 
 .navbar {
@@ -61,4 +96,59 @@ input {
 
 .hidden {
     display: none;
+}
+
+.normal {
+    background-color: $normal;
+}
+.fighting {
+    background-color: $fighting;
+}
+.flying {
+    background-color: $flying;
+}
+.poison {
+    background-color: $poison;
+}
+.ground {
+    background-color: $ground;
+}
+.rock {
+    background-color: $rock;
+}
+.bug {
+    background-color: $bug;
+}
+.ghost {
+    background-color: $ghost;
+}
+.steel {
+    background-color: $steel;
+}
+.fire {
+    background-color: $fire;
+}
+.water {
+    background-color: $water;
+}
+.grass {
+    background-color: $grass;
+}
+.electric {
+    background-color: $electric;
+}
+.psychic {
+    background-color: $psychic;
+}
+.ice {
+    background-color: $ice;
+}
+.dragon {
+    background-color: $dragon;
+}
+.dark {
+    background-color: $dark;
+}
+.fairy {
+    background-color: $fairy;
 }
