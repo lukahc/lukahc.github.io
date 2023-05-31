@@ -1,4 +1,4 @@
-async function getName(num) {
+async function getName(idOrName) {
     const resultE = document.querySelector("#result");
     const errorE = document.querySelector("#error");
     const nameE = document.querySelector("#name");
@@ -6,9 +6,13 @@ async function getName(num) {
     const typesE = document.querySelector("#types");
     const spriteE = document.querySelector("#sprite");
     const submitE = document.querySelector("#submit");
+
     submitE.value = "Loading...";
+
     try {
-        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${num}`);
+        const res = await fetch(
+            `https://pokeapi.co/api/v2/pokemon/${idOrName.toLowerCase()}`
+        );
         const json = await res.json();
 
         nameE.innerHTML = toTitleCase(json.name);
