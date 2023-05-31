@@ -50,6 +50,9 @@ input[type=submit]:hover {
   padding: 0.2rem;
   display: inline-block;
   border-radius: 1rem;
+  min-width: 4rem;
+  font-weight: bold;
+  font-size: 0.75rem;
 }
 
 .navbar {
@@ -74,72 +77,90 @@ input[type=submit]:hover {
 
 .normal {
   background-color: #919aa3;
+  -webkit-text-stroke: 1px #666c72;
 }
 
 .fighting {
   background-color: #cf3e69;
+  -webkit-text-stroke: 1px #912b4a;
 }
 
 .flying {
   background-color: #90aade;
+  -webkit-text-stroke: 1px #65779b;
 }
 
 .poison {
   background-color: #ad6ac9;
+  -webkit-text-stroke: 1px #794a8d;
 }
 
 .ground {
   background-color: #da7844;
+  -webkit-text-stroke: 1px #995430;
 }
 
 .rock {
   background-color: #c8b88c;
+  -webkit-text-stroke: 1px #8c8162;
 }
 
 .bug {
   background-color: #91c228;
+  -webkit-text-stroke: 1px #66881c;
 }
 
 .ghost {
   background-color: #566eb1;
+  -webkit-text-stroke: 1px #3c4d7c;
 }
 
 .steel {
   background-color: #5a8fa3;
+  -webkit-text-stroke: 1px #3f6472;
 }
 
 .fire {
   background-color: #ff9d53;
+  -webkit-text-stroke: 1px #b36e3a;
 }
 
 .water {
   background-color: #4c91d6;
+  -webkit-text-stroke: 1px #356696;
 }
 
 .grass {
   background-color: #63bc5b;
+  -webkit-text-stroke: 1px #458440;
 }
 
 .electric {
   background-color: #f3d338;
+  -webkit-text-stroke: 1px #aa9427;
 }
 
 .psychic {
   background-color: #f97277;
+  -webkit-text-stroke: 1px #ae5053;
 }
 
 .ice {
   background-color: #7ed2c5;
+  -webkit-text-stroke: 1px #58938a;
 }
 
 .dragon {
   background-color: #026dc5;
+  -webkit-text-stroke: 1px #014c8a;
 }
 
 .dark {
   background-color: #5a5366;
+  -webkit-text-stroke: 1px #3f3a47;
 }
 
 .fairy {
   background-color: #ec8fe6;
+  -webkit-text-stroke: 1px #a564a1;
 }/*# sourceMappingURL=styles.css.map */

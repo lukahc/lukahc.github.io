@@ -18,7 +18,7 @@ async function getName(num) {
         typesE.innerHTML = types
             .map(
                 (type) =>
-                    `<span class="type ${type}">${toTitleCase(type)}</span>`
+                    `<span class="type ${type}">${type.toUpperCase()}</span>`
             )
             .join("");
 
