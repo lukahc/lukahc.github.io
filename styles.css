@@ -19,17 +19,19 @@ h1 {
   margin: 1rem 0;
 }
 
-input {
+input,
+.submit {
   font: inherit;
   background: #232323;
   border: 1px solid #dedede;
   border-radius: 5px;
   color: inherit;
 }
-input[type=submit] {
+
+.submit {
   cursor: pointer;
 }
-input[type=submit]:hover {
+.submit:hover {
   background: #191919;
 }
 

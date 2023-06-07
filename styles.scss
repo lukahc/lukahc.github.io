@@ -49,17 +49,19 @@ h1 {
     margin: 1rem 0;
 }
 
-input {
+input,
+.submit {
     font: inherit;
     background: $bg;
     border: 1px solid $fg;
     border-radius: 5px;
     color: inherit;
-    &[type="submit"] {
-        cursor: pointer;
-        &:hover {
-            background: $bg-dark;
-        }
+}
+
+.submit {
+    cursor: pointer;
+    &:hover {
+        background: $bg-dark;
     }
 }
 
