@@ -56,6 +56,7 @@ img {
 input,
 .submit {
     font: inherit;
+    appearance: none;
     background: $bg;
     border: 1px solid $fg;
     border-radius: 5px;

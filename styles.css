@@ -26,6 +26,9 @@ img {
 input,
 .submit {
   font: inherit;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background: #232323;
   border: 1px solid #dedede;
   border-radius: 5px;
