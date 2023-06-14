@@ -36,10 +36,11 @@ input,
 }
 
 .result {
-  width: 10rem;
+  width: 100%;
   border: 0.4rem solid #dedede;
   border-radius: 1rem;
-  margin: 1rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
 }
 .result > div {
   text-align: center;
@@ -59,6 +60,8 @@ input,
 .result .varieties-flexbox {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .navbar {

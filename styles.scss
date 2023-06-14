@@ -66,10 +66,11 @@ input,
 }
 
 .result {
-    width: 10rem;
+    width: 100%;
     border: 0.4rem solid $fg;
     border-radius: 1rem;
-    margin: 1rem;
+    margin: 1rem 0;
+    box-sizing: border-box;
     > div {
         text-align: center;
     }
@@ -88,6 +89,8 @@ input,
     .varieties-flexbox {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
