@@ -6,14 +6,40 @@ async function getName(idOrName) {
     const typesE = document.querySelector("#types");
     const spriteE = document.querySelector("#sprite");
     const submitE = document.querySelector("#submit");
+    const varietiesE = document.querySelector("#varieties");
 
-    submitE.value = "Loading...";
+    submitE.innerHTML = "Loading...";
 
     try {
         const res = await fetch(
             `https://pokeapi.co/api/v2/pokemon/${idOrName.toLowerCase()}`
         );
         const json = await res.json();
+
+        const speciesRes = await fetch(json.species.url);
+        const speciesJson = await speciesRes.json();
+        const varieties = await Promise.all(
+            speciesJson.varieties
+                .filter(({ pokemon: { name } }) => name !== json.name)
+                .map(async ({ pokemon: { url } }) => {
+                    const varietyRes = await fetch(url);
+                    const varietyJson = await varietyRes.json();
+                    return varietyJson;
+                })
+        );
+
+        if (varieties.length) {
+            varietiesE.innerHTML =
+                `<h2>Varieties</h2>` +
+                varieties
+                    .map(
+                        (variety) =>
+                            `<img src=${variety.sprites.front_default} alt=${variety.name} /><span>${variety.name}</span>`
+                    )
+                    .join("");
+        } else {
+            varietiesE.innerHTML = "";
+        }
 
         nameE.innerHTML = toTitleCase(json.name);
         idE.innerHTML = "#" + json.id.toString().padStart(4, "0");
@@ -26,7 +52,7 @@ async function getName(idOrName) {
             )
             .join("");
 
-        spriteE.innerHTML = `<img src=${json.sprites.front_default} alt="Sprite" />`;
+        spriteE.innerHTML = `<img src=${json.sprites.front_default} alt="${json.name}" />`;
 
         errorE.className = "hidden";
         resultE.className = "result";
@@ -34,8 +60,9 @@ async function getName(idOrName) {
         errorE.className = "error";
         resultE.className = "hidden";
     }
-    submitE.value = "Submit";
+    submitE.innerHTML = "Submit";
 }
+
 function toTitleCase(string) {
     return string[0].toUpperCase() + string.slice(1);
 }
