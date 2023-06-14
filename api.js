@@ -35,7 +35,8 @@ async function getName(idOrName) {
                     .map(
                         (variety) =>
                             `<div><img src=${
-                                variety.sprites.front_default
+                                variety.sprites.other["official-artwork"]
+                                    .front_default
                             } alt=${variety.name} /><div>${toTitleCase(
                                 variety.name
                             )}</div></div>`
@@ -57,7 +58,7 @@ async function getName(idOrName) {
             )
             .join("");
 
-        spriteE.innerHTML = `<img src=${json.sprites.front_default} alt="${json.name}" />`;
+        spriteE.innerHTML = `<img src=${json.sprites.other["official-artwork"].front_default} alt="${json.name}" />`;
 
         errorE.className = "hidden";
         resultE.className = "result";
