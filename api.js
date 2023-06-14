@@ -45,11 +45,13 @@ async function getResult(idOrName) {
                             }');" class="pokemon-button"><img src=${
                                 pokemon.sprites.other["official-artwork"]
                                     .front_default
-                            } alt=${pokemon.name}/><div>${toTitleCase(
+                            } alt=${
+                                pokemon.name
+                            }/><div class="name-text">${toTitleCase(
                                 pokemon.name
                             )}</div></button>`
                     )
-                    .join("") +
+                    .join(`<div class="arrow">⇨</div>`) +
                 `</div>`;
         } else {
             evolutionE.innerHTML = "";
@@ -66,7 +68,9 @@ async function getResult(idOrName) {
                             }');" class="pokemon-button"><img src=${
                                 variety.sprites.other["official-artwork"]
                                     .front_default
-                            } alt=${variety.name} /><div>${toTitleCase(
+                            } alt=${
+                                variety.name
+                            } /><div class="name-text">${toTitleCase(
                                 variety.name
                             )}</div></button>`
                     )

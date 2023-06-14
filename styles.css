@@ -64,16 +64,25 @@ input,
 .result .flexbox {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .result .pokemon-button {
   all: inherit;
   display: flex;
   flex-direction: column;
+  flex: 1 1;
+  min-width: 20%;
 }
 .result .pokemon-button:hover {
   cursor: pointer;
+}
+.result .arrow {
+  font-size: 10vw;
+}
+.result .name-text {
+  font-size: 1vw;
 }
 
 .navbar {

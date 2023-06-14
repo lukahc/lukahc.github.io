@@ -93,16 +93,25 @@ input,
     .flexbox {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
     }
     .pokemon-button {
         all: inherit;
         display: flex;
         flex-direction: column;
+        flex: 1 1;
+        min-width: 20%;
         &:hover {
             cursor: pointer;
         }
+    }
+    .arrow {
+        font-size: 10vw;
+    }
+    .name-text {
+        font-size: 1vw;
     }
 }
 
