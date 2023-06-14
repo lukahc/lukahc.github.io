@@ -19,6 +19,10 @@ h1 {
   margin: 1rem 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 input,
 .submit {
   font: inherit;
