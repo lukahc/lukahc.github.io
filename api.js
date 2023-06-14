@@ -34,7 +34,11 @@ async function getName(idOrName) {
                 varieties
                     .map(
                         (variety) =>
-                            `<div><img src=${variety.sprites.front_default} alt=${variety.name} /><div>${variety.name}</div></div>`
+                            `<div><img src=${
+                                variety.sprites.front_default
+                            } alt=${variety.name} /><div>${toTitleCase(
+                                variety.name
+                            )}</div></div>`
                     )
                     .join("") +
                 `</div>`;
@@ -65,5 +69,7 @@ async function getName(idOrName) {
 }
 
 function toTitleCase(string) {
-    return string[0].toUpperCase() + string.slice(1);
+    const words = string.split("-");
+    console.log(words);
+    return words.map((word) => word[0].toUpperCase() + word.slice(1)).join(" ");
 }
