@@ -85,6 +85,10 @@ input,
         font-weight: bold;
         font-size: 0.75rem;
     }
+    .varieties-flexbox {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 .navbar {

@@ -30,13 +30,14 @@ async function getName(idOrName) {
 
         if (varieties.length) {
             varietiesE.innerHTML =
-                `<h2>Varieties</h2>` +
+                `<h2>Varieties</h2><div class="varieties-flexbox">` +
                 varieties
                     .map(
                         (variety) =>
-                            `<img src=${variety.sprites.front_default} alt=${variety.name} /><span>${variety.name}</span>`
+                            `<div><img src=${variety.sprites.front_default} alt=${variety.name} /><div>${variety.name}</div></div>`
                     )
-                    .join("");
+                    .join("") +
+                `</div>`;
         } else {
             varietiesE.innerHTML = "";
         }
