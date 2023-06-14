@@ -33,6 +33,7 @@ input,
   border: 1px solid #dedede;
   border-radius: 5px;
   color: inherit;
+  padding: 3px 6px;
 }
 
 .submit {
