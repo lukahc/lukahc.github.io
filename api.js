@@ -1,4 +1,4 @@
-async function getName(idOrName) {
+async function getResult(idOrName) {
     const resultE = document.querySelector("#result");
     const errorE = document.querySelector("#error");
     const nameE = document.querySelector("#name");
@@ -34,12 +34,14 @@ async function getName(idOrName) {
                 varieties
                     .map(
                         (variety) =>
-                            `<div><img src=${
+                            `<button onclick="getResult('${
+                                variety.id
+                            }');" class="variety-button"><img src=${
                                 variety.sprites.other["official-artwork"]
                                     .front_default
                             } alt=${variety.name} /><div>${toTitleCase(
                                 variety.name
-                            )}</div></div>`
+                            )}</div></button>`
                     )
                     .join("") +
                 `</div>`;

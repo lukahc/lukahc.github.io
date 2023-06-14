@@ -91,6 +91,14 @@ input,
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        .variety-button {
+            all: inherit;
+            display: flex;
+            flex-direction: column;
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 }
 

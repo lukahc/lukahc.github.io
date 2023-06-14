@@ -63,6 +63,14 @@ input,
   flex-wrap: wrap;
   justify-content: center;
 }
+.result .varieties-flexbox .variety-button {
+  all: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.result .varieties-flexbox .variety-button:hover {
+  cursor: pointer;
+}
 
 .navbar {
   display: flex;
