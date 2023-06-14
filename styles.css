@@ -61,18 +61,18 @@ input,
   font-weight: bold;
   font-size: 0.75rem;
 }
-.result .varieties-flexbox {
+.result .flexbox {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
-.result .varieties-flexbox .variety-button {
+.result .pokemon-button {
   all: inherit;
   display: flex;
   flex-direction: column;
 }
-.result .varieties-flexbox .variety-button:hover {
+.result .pokemon-button:hover {
   cursor: pointer;
 }
 

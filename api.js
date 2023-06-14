@@ -7,12 +7,15 @@ async function getResult(idOrName) {
     const spriteE = document.querySelector("#sprite");
     const submitE = document.querySelector("#submit");
     const varietiesE = document.querySelector("#varieties");
+    const evolutionE = document.querySelector("#evolution");
 
     submitE.innerHTML = "Loading...";
 
     try {
         const res = await fetch(
-            `https://pokeapi.co/api/v2/pokemon/${idOrName.toLowerCase()}`
+            `https://pokeapi.co/api/v2/pokemon/${idOrName
+                .replace(" ", "-")
+                .toLowerCase()}`
         );
         const json = await res.json();
 
@@ -27,16 +30,40 @@ async function getResult(idOrName) {
                     return varietyJson;
                 })
         );
+        const evolutionChain = await getEvolutionChain(
+            speciesJson.evolution_chain.url
+        );
+
+        if (evolutionChain.length > 1) {
+            evolutionE.innerHTML =
+                `<h2>Evolution Chain</h2><div class="flexbox">` +
+                evolutionChain
+                    .map(
+                        (pokemon) =>
+                            `<button onclick="getResult('${
+                                pokemon.id
+                            }');" class="pokemon-button"><img src=${
+                                pokemon.sprites.other["official-artwork"]
+                                    .front_default
+                            } alt=${pokemon.name}/><div>${toTitleCase(
+                                pokemon.name
+                            )}</div></button>`
+                    )
+                    .join("") +
+                `</div>`;
+        } else {
+            evolutionE.innerHTML = "";
+        }
 
         if (varieties.length) {
             varietiesE.innerHTML =
-                `<h2>Varieties</h2><div class="varieties-flexbox">` +
+                `<h2>Varieties</h2><div class="flexbox">` +
                 varieties
                     .map(
                         (variety) =>
                             `<button onclick="getResult('${
                                 variety.id
-                            }');" class="variety-button"><img src=${
+                            }');" class="pokemon-button"><img src=${
                                 variety.sprites.other["official-artwork"]
                                     .front_default
                             } alt=${variety.name} /><div>${toTitleCase(
@@ -73,6 +100,35 @@ async function getResult(idOrName) {
 
 function toTitleCase(string) {
     const words = string.split("-");
-    console.log(words);
     return words.map((word) => word[0].toUpperCase() + word.slice(1)).join(" ");
+}
+
+async function getNextEvolution(stage, arr) {
+    arr.push(stage.species.url);
+    if (stage.evolves_to.length) {
+        return await getNextEvolution(stage.evolves_to[0], arr);
+    } else {
+        return arr;
+    }
+}
+
+async function getEvolutionChain(url) {
+    const res = await fetch(url);
+    const json = await res.json();
+    const urlArray = await getNextEvolution(json.chain, []);
+
+    const pokemonArray = await Promise.all(
+        urlArray.map(async (url) => {
+            const speciesRes = await fetch(url);
+            const speciesJson = await speciesRes.json();
+            const defaultUrl = speciesJson.varieties.filter(
+                ({ is_default }) => is_default
+            )[0].pokemon.url;
+            const pokemonRes = await fetch(defaultUrl);
+            const pokemonJson = await pokemonRes.json();
+            return pokemonJson;
+        })
+    );
+
+    return pokemonArray;
 }

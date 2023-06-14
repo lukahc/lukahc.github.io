@@ -90,18 +90,18 @@ input,
         font-weight: bold;
         font-size: 0.75rem;
     }
-    .varieties-flexbox {
+    .flexbox {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        .variety-button {
-            all: inherit;
-            display: flex;
-            flex-direction: column;
-            &:hover {
-                cursor: pointer;
-            }
+    }
+    .pokemon-button {
+        all: inherit;
+        display: flex;
+        flex-direction: column;
+        &:hover {
+            cursor: pointer;
         }
     }
 }
