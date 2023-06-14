@@ -79,10 +79,10 @@ input,
   cursor: pointer;
 }
 .result .arrow {
-  font-size: 10vw;
+  font-size: 6vw;
 }
 .result .name-text {
-  font-size: 1vw;
+  font-size: 3vw;
 }
 
 .navbar {
