@@ -50,7 +50,7 @@ async function getResult(idOrName) {
         }
 
         nameE.innerHTML = toTitleCase(json.name);
-        idE.innerHTML = "#" + json.id.toString().padStart(4, "0");
+        idE.innerHTML = "#" + speciesJson.id.toString().padStart(4, "0");
 
         const types = json.types.map(({ type: { name } }) => name);
         typesE.innerHTML = types
