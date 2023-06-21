@@ -28,11 +28,22 @@ $fairy: #ec8fe6;
     @return mix(black, $color, 30%);
 }
 
-@mixin stroke($size: 1px, $color: #000) {
-    text-shadow: -#{$size} -#{$size} 0 $color, 0 -#{$size} 0 $color,
-        #{$size} -#{$size} 0 $color, #{$size} 0 0 $color,
-        #{$size} #{$size} 0 $color, 0 #{$size} 0 $color,
-        -#{$size} #{$size} 0 $color, -#{$size} 0 0 $color;
+@mixin stroke($color: #000, $stroke-size: 0.15vw) {
+    text-shadow: -#{$stroke-size} -#{$stroke-size} 0 $color,
+        0 -#{$stroke-size} 0 $color, #{$stroke-size} -#{$stroke-size} 0 $color,
+        #{$stroke-size} 0 0 $color, #{$stroke-size} #{$stroke-size} 0 $color,
+        0 #{$stroke-size} 0 $color, -#{$stroke-size} #{$stroke-size} 0 $color,
+        -#{$stroke-size} 0 0 $color;
+    @media screen and (orientation: portrait) {
+        text-shadow: -#{$stroke-size * 2} -#{$stroke-size * 2} 0 $color,
+            0 -#{$stroke-size * 2} 0 $color,
+            #{$stroke-size * 2} -#{$stroke-size * 2} 0 $color,
+            #{$stroke-size * 2} 0 0 $color,
+            #{$stroke-size * 2} #{$stroke-size * 2} 0 $color,
+            0 #{$stroke-size * 2} 0 $color,
+            -#{$stroke-size * 2} #{$stroke-size * 2} 0 $color,
+            -#{$stroke-size * 2} 0 0 $color;
+    }
 }
 
 //Sass will not compile with utf-8 charset unless there are non-ASCII characters
@@ -105,6 +116,13 @@ input,
         min-width: 8vw;
         font-weight: bold;
         font-size: 1.5vw;
+        @media only screen and (orientation: portrait) {
+            margin: 0.8vw;
+            padding: 0.8vw;
+            border-radius: 4vw;
+            min-width: 16vw;
+            font-size: 3vw;
+        }
     }
     .flexbox {
         display: flex;
@@ -165,73 +183,73 @@ input,
 
 .normal {
     background-color: $normal;
-    @include stroke(0.15vw, shade($normal));
+    @include stroke(shade($normal));
 }
 .fighting {
     background-color: $fighting;
-    @include stroke(0.15vw, shade($fighting));
+    @include stroke(shade($fighting));
 }
 .flying {
     background-color: $flying;
-    @include stroke(0.15vw, shade($flying));
+    @include stroke(shade($flying));
 }
 .poison {
     background-color: $poison;
-    @include stroke(0.15vw, shade($poison));
+    @include stroke(shade($poison));
 }
 .ground {
     background-color: $ground;
-    @include stroke(0.15vw, shade($ground));
+    @include stroke(shade($ground));
 }
 .rock {
     background-color: $rock;
-    @include stroke(0.15vw, shade($rock));
+    @include stroke(shade($rock));
 }
 .bug {
     background-color: $bug;
-    @include stroke(0.15vw, shade($bug));
+    @include stroke(shade($bug));
 }
 .ghost {
     background-color: $ghost;
-    @include stroke(0.15vw, shade($ghost));
+    @include stroke(shade($ghost));
 }
 .steel {
     background-color: $steel;
-    @include stroke(0.15vw, shade($steel));
+    @include stroke(shade($steel));
 }
 .fire {
     background-color: $fire;
-    @include stroke(0.15vw, shade($fire));
+    @include stroke(shade($fire));
 }
 .water {
     background-color: $water;
-    @include stroke(0.15vw, shade($water));
+    @include stroke(shade($water));
 }
 .grass {
     background-color: $grass;
-    @include stroke(0.15vw, shade($grass));
+    @include stroke(shade($grass));
 }
 .electric {
     background-color: $electric;
-    @include stroke(0.15vw, shade($electric));
+    @include stroke(shade($electric));
 }
 .psychic {
     background-color: $psychic;
-    @include stroke(0.15vw, shade($psychic));
+    @include stroke(shade($psychic));
 }
 .ice {
     background-color: $ice;
-    @include stroke(0.15vw, shade($ice));
+    @include stroke(shade($ice));
 }
 .dragon {
     background-color: $dragon;
-    @include stroke(0.15vw, shade($dragon));
+    @include stroke(shade($dragon));
 }
 .dark {
     background-color: $dark;
-    @include stroke(0.15vw, shade($dark));
+    @include stroke(shade($dark));
 }
 .fairy {
     background-color: $fairy;
-    @include stroke(0.15vw, shade($fairy));
+    @include stroke(shade($fairy));
 }
