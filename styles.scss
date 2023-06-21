@@ -133,6 +133,18 @@ input,
     }
 }
 
+.section:not(:empty) {
+    border-top: 0.1rem solid $fg;
+    border-bottom: 0.1rem solid $fg;
+    padding: 0.5rem;
+    &:first-child {
+        border-top: 0;
+    }
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+
 .hidden {
     display: none;
 }
