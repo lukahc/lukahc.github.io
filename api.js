@@ -1,3 +1,14 @@
+// TODO:
+//  - Fix Porygon-Z being shown as Porygon Z
+//  - Fix mega pokemon having 'Mega' at the end of their name (eg. 'Blastoise Mega' instead of 'Mega Blastoise')
+//    - Note: Pokemon with multiple mega evolutions (Charizard and Mewtwo) make this more complicated
+//  - Handle pokemon with multiple evolution lines (eg. Snorunt -> Froslass or Glalie)
+//  - Handle inputting pokemon names without specifying variety (eg. 'Deoxys' should default to 'Deoxys Normal')
+//  - Handle pokemon without an obvious default variety (eg. Urshifu Single Strike/Rapid Strike)
+//  - Display Gigantamax properly (eg. 'Charizard Gmax' should be 'Gigantamax Charizard')
+//  - Display gender differences if notable (eg. Combee)
+//  - Display evolution requirements
+
 async function getResult(idOrName) {
     const resultE = document.querySelector("#result");
     const errorE = document.querySelector("#error");
@@ -14,7 +25,7 @@ async function getResult(idOrName) {
     try {
         const res = await fetch(
             `https://pokeapi.co/api/v2/pokemon/${idOrName
-                .replace(" ", "-")
+                .replaceAll(" ", "-")
                 .toLowerCase()}`
         );
         const json = await res.json();
