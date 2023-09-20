@@ -1,7 +1,5 @@
 // TODO:
 //  - Fix Porygon-Z being shown as Porygon Z
-//  - Fix mega pokemon having 'Mega' at the end of their name (eg. 'Blastoise Mega' instead of 'Mega Blastoise')
-//    - Note: Pokemon with multiple mega evolutions (Charizard and Mewtwo) make this more complicated
 //  - Handle pokemon with multiple evolution lines (eg. Snorunt -> Froslass or Glalie)
 //  - Handle inputting pokemon names without specifying variety (eg. 'Deoxys' should default to 'Deoxys Normal')
 //  - Handle pokemon without an obvious default variety (eg. Urshifu Single Strike/Rapid Strike)
@@ -58,7 +56,7 @@ async function getResult(idOrName) {
                                     .front_default
                             } alt=${
                                 pokemon.name
-                            }/><div class="name-text">${toTitleCase(
+                            }/><div class="name-text">${formatName(
                                 pokemon.name
                             )}</div></button>`
                     )
@@ -81,7 +79,7 @@ async function getResult(idOrName) {
                                     .front_default
                             } alt=${
                                 variety.name
-                            } /><div class="name-text">${toTitleCase(
+                            } /><div class="name-text">${formatName(
                                 variety.name
                             )}</div></button>`
                     )
@@ -91,7 +89,7 @@ async function getResult(idOrName) {
             varietiesE.innerHTML = "";
         }
 
-        nameE.innerHTML = toTitleCase(json.name);
+        nameE.innerHTML = formatName(json.name);
         idE.innerHTML = "#" + speciesJson.id.toString().padStart(4, "0");
 
         const types = json.types.map(({ type: { name } }) => name);
@@ -113,8 +111,13 @@ async function getResult(idOrName) {
     submitE.innerHTML = "Submit";
 }
 
-function toTitleCase(string) {
+function formatName(string) {
     const words = string.split("-");
+    const megaIndex = words.indexOf("mega");
+    if (megaIndex > -1) {
+        words.splice(megaIndex, 1);
+        words.unshift("mega");
+    }
     return words.map((word) => word[0].toUpperCase() + word.slice(1)).join(" ");
 }
 
