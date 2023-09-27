@@ -114,9 +114,14 @@ async function getResult(idOrName) {
 function formatName(string) {
     const words = string.split("-");
     const megaIndex = words.indexOf("mega");
+    const gMaxIndex = words.indexOf("gmax");
     if (megaIndex > -1) {
         words.splice(megaIndex, 1);
         words.unshift("mega");
+    }
+    if (gMaxIndex > -1) {
+        words.splice(gMaxIndex, 1);
+        words.unshift("gigantamax");
     }
     return words.map((word) => word[0].toUpperCase() + word.slice(1)).join(" ");
 }
