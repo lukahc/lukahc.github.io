@@ -1,9 +1,26 @@
 // TODO:
-//  - Fix Porygon-Z being shown as Porygon Z
+//  - Handle atypical names
+//      - Both Nidorans
+//      - Porygon-Z
+//      - Mr. Mime
+//      - Mime Jr.
+//      - Mr. Rime
+//      - Ho-Oh
+//      - Flabébé
+//      - Type: Null
+//      - Jangmo-o
+//      - Hakamo-o
+//      - Kommo-o
+//      - Farfetch'd
+//      - Sirfetch'd
+//      - Wo-Chien
+//      - Chien-Pao
+//      - Ting-Lu
+//      - Chi-Yu
 //  - Handle pokemon with multiple evolution lines (eg. Snorunt -> Froslass or Glalie)
+//  - Handle regional forms
 //  - Handle inputting pokemon names without specifying variety (eg. 'Deoxys' should default to 'Deoxys Normal')
 //  - Handle pokemon without an obvious default variety (eg. Urshifu Single Strike/Rapid Strike)
-//  - Display Gigantamax properly (eg. 'Charizard Gmax' should be 'Gigantamax Charizard')
 //  - Display gender differences if notable (eg. Combee)
 //  - Display evolution requirements
 
@@ -115,6 +132,7 @@ function formatName(string) {
     const words = string.split("-");
     const megaIndex = words.indexOf("mega");
     const gMaxIndex = words.indexOf("gmax");
+    const primalIndex = words.indexOf("primal");
     if (megaIndex > -1) {
         words.splice(megaIndex, 1);
         words.unshift("mega");
@@ -122,6 +140,10 @@ function formatName(string) {
     if (gMaxIndex > -1) {
         words.splice(gMaxIndex, 1);
         words.unshift("gigantamax");
+    }
+    if (primalIndex > -1) {
+        words.splice(primalIndex, 1);
+        words.unshift("primal");
     }
     return words.map((word) => word[0].toUpperCase() + word.slice(1)).join(" ");
 }
