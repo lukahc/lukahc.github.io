@@ -132,6 +132,7 @@ function formatName(string) {
     const words = string.split("-");
     const megaIndex = words.indexOf("mega");
     const gMaxIndex = words.indexOf("gmax");
+    const eMaxIndex = words.indexOf("eternamax");
     const primalIndex = words.indexOf("primal");
     if (megaIndex > -1) {
         words.splice(megaIndex, 1);
@@ -140,6 +141,10 @@ function formatName(string) {
     if (gMaxIndex > -1) {
         words.splice(gMaxIndex, 1);
         words.unshift("gigantamax");
+    }
+    if (eMaxIndex > -1) {
+        words.splice(eMaxIndex, 1);
+        words.unshift("eternamax");
     }
     if (primalIndex > -1) {
         words.splice(primalIndex, 1);
