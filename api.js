@@ -1,28 +1,33 @@
 // TODO:
-//  - Handle atypical names
-//      - Both Nidorans
-//      - Porygon-Z
-//      - Mr. Mime
-//      - Mime Jr.
-//      - Mr. Rime
-//      - Ho-Oh
-//      - Flabébé
-//      - Type: Null
-//      - Jangmo-o
-//      - Hakamo-o
-//      - Kommo-o
-//      - Farfetch'd
-//      - Sirfetch'd
-//      - Wo-Chien
-//      - Chien-Pao
-//      - Ting-Lu
-//      - Chi-Yu
 //  - Handle pokemon with multiple evolution lines (eg. Snorunt -> Froslass or Glalie)
 //  - Handle regional forms
 //  - Handle inputting pokemon names without specifying variety (eg. 'Deoxys' should default to 'Deoxys Normal')
 //  - Handle pokemon without an obvious default variety (eg. Urshifu Single Strike/Rapid Strike)
 //  - Display gender differences if notable (eg. Combee)
 //  - Display evolution requirements
+
+const atypicalNames = {
+    "nidoran-f": "Nidoran ♀",
+    "nidoran-m": "Nidoran ♂",
+    "porygon-z": "Porygon-Z",
+    "mr-mime": "Mr. Mime",
+    "mr-mime-galar": "Galarian Mr. Mime",
+    "mime-jr": "Mime Jr.",
+    "mr-rime": "Mr. Rime",
+    "ho-oh": "Ho-Oh",
+    flabebe: "Flabébé",
+    "type-null": "Type: Null",
+    "jangmo-o": "Jangmo-o",
+    "hakamo-o": "Hakamo-o",
+    "kommo-o": "Kommo-o",
+    farfetchd: "Farfetch'd",
+    "farfetchd-galar": "Galarian Farfetch'd",
+    sirfetchd: "Sirfetch'd",
+    "wo-chien": "Wo-Chien",
+    "chien-pao": "Chien-Pao",
+    "ting-lu": "Ting-Lu",
+    "chi-yu": "Chi-Yu",
+};
 
 async function getResult(idOrName) {
     const resultE = document.querySelector("#result");
@@ -129,6 +134,10 @@ async function getResult(idOrName) {
 }
 
 function formatName(string) {
+    if (atypicalNames[string]) {
+        return atypicalNames[string];
+    }
+
     const words = string.split("-");
     const megaIndex = words.indexOf("mega");
     const gMaxIndex = words.indexOf("gmax");
